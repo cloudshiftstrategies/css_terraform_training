@@ -110,6 +110,7 @@
 9. Add a cloud provider and aws_instance to your main.tf
     
     * Define the provider as "aws", region "us-east-2", do not specify credentials as many examples show
+    * Define a data resouces that looks up the latest ubuntu AMI
     * Define an aws ec2 vm instance of type: t2_micro and ami: ami-050553a7784d00d21" with a tag:Name = var.my_name
     * Define a single output called instance_id to be the aws instance id
     
@@ -119,18 +120,33 @@
         
     ```hcl-terraform
     # main.tf
+    provider "aws" {
+      region = "us-east-2"
+    }
+ 
+    # Get the latest ubuntu 18.04 image
+    data "aws_ami" "my_ami" {
+        filter {
+            name = "name"
+            values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
+        }
+        most_recent = true
+    }
+
+    # Deploy an instance named after me
+    resource "aws_instance" "my_instance" {
+      ami = "${data.aws_ami.my_ami.id}"
+      instance_type = "t2.micro"
+      tags = {
+        Name = "${var.my_name}"
+      }
+    }
+
+    # A variable with my name
     variable "my_name" {
     }
-    provider "aws" {
-        region = "us-east-2"
-    }
-    resource "aws_instance" "first_instance" {
-        instance_type = "t2.micro"
-        ami = "ami-050553a7784d00d21"
-        tags {
-          "Name" = "${var.my_name}"
-        }
-    }    
+
+    # Return the aws instance id
     output "instance_id" {
       value = "${aws_instance.my_instance.id}"
     }

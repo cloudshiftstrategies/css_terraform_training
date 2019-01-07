@@ -110,7 +110,7 @@ HCL is a templating language that is both easy for humans and machines to read.
 Terraform provides a common **workflow** to provision infrastructure resources across multiple clouds and providers.
 This workflow makes high velicity 
 
-   * PLAN - In this phase, the HCL configuration is compared against deployed resouces.  The user is informed of
+   * **PLAN** - In this phase, the HCL configuration is compared against deployed resouces.  The user is informed of
    the changes that will be made to the infrasrtucture. This is very important for understanding the impact of a change.
    
         In the following example, terraform plan 1 new resource will be deployed
@@ -172,7 +172,7 @@ This workflow makes high velicity
     "terraform apply" is subsequently run.
 
     
-   * APPLY - In the apply phase of the workflow, terraform uses provider APIs to provision resources
+   * **APPLY** - In the apply phase of the workflow, terraform uses provider APIs to provision resources
    
         In the following example, the AWS virtual machine was created
    
@@ -215,7 +215,7 @@ This workflow makes high velicity
 
     Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
     
-   * DESTROY - Just as it sounds, destroy removes all resources defined
+   * **DESTROY** - Just as it sounds, destroy removes all resources defined
    
         In the following example, our VM is destroyed
         
