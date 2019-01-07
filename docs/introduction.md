@@ -5,6 +5,57 @@
 Terraform is a tool for **building, changing, and versioning infrastructure safely and efficiently**. Terraform can 
 manage existing and popular service providers as well as custom in-house solutions.
 
+### Simple and powerful
+HashiCorp Terraform enables you to safely and predictably create, change, and improve infrastructure.
+* It is an open source tool that codifies APIs into declarative configuration files 
+* can be shared amongst team members, treated as code, edited, reviewed, and versioned.
+
+![tf_wkflow](images/tf_wkflow.png)
+
+**INFRASTRUCTURE AS CODE** Define infrastructure as code to increase operator productivity and transparency.
+
+**COLLABORATE & SHARE** Terraform configurations can be stored in version control, shared, and collaborated on by
+teams of operators.
+
+**EVOLVE YOUR INFRASTRUCTURE** Track the complete history of infrastructure versions.
+
+**AUTOMATION FRIENDLY** If it can be codified, it can be automated.
+
+![tf_iac](images/tf_iac.png)
+
+**ONE SAFE WORKFLOW ACROSS PROVIDERS** Terraform provides an elegant user experience for operators to safely and
+predictably make changes to infrastructure.
+
+**MAP RESOURCE DEPENDENCIES** Understand how a minor change could have potential cascading effects across an
+infrastructure before executing that change. Terraform builds a dependency graph from the configurations, and
+walks this graph to generate plans, refresh state, and more. 
+
+**SEPARATION OF PLAN & APPLY**
+Separating plans and applies reduces mistakes and uncertainty at scale. Plans show operators what would happen, applies
+execute changes.
+
+**ONE SAFE WORKFLOW**
+Use Terraform to create resources across all major infrastructure providers (AWS, GCP, Azure, OpenStack, VMware, and more).
+
+![tf_1wkflw](images/tf_1wkflw.png)
+
+**REPRODUCIBLE INFRASTRUCTURE**
+Terraform lets operators easily use the same configurations in multiple places to reduce mistakes and save time.
+
+**ENVIRONMENT PARITY**
+Use the same Terraform configuration to provision identical staging, QA, and production environments.
+
+**SHAREABLE MODULES**
+Common Terraform configurations can be packaged as modules and used across teams and organizations.
+
+**COMBINE MULTIPLE PROVIDERS CONSISTENTLY**
+Terraform allows you to effortlessly combine high-level system providers. Launch a server from one cloud provider, add
+a DNS entry with its IP with a different provider. Built-in dependency resolution means things happen in the right order.
+
+![tf_beni](images/tf_beni.png)
+
+### How it works
+
 * Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.
 * Terraform generates an execution plan describing what it will do to reach the desired state
 * Then terraform executes the plan to build the described infrastructure.
