@@ -10,7 +10,7 @@ HashiCorp Terraform enables you to safely and predictably create, change, and im
 * It is an open source tool that codifies APIs into declarative configuration files 
 * can be shared amongst team members, treated as code, edited, reviewed, and versioned.
 
-![tf_wkflow](images/tf_wkflow.png)
+![tf_workflow](images/tf_wkflow.png)
 
 **INFRASTRUCTURE AS CODE** Define infrastructure as code to increase operator productivity and transparency.
 
@@ -35,9 +35,9 @@ Separating plans and applies reduces mistakes and uncertainty at scale. Plans sh
 execute changes.
 
 **ONE SAFE WORKFLOW**
-Use Terraform to create resources across all major infrastructure providers (AWS, GCP, Azure, OpenStack, VMware, and more).
+Use Terraform to create resources across all major infrastructure providers (AWS, GCP, Azure, OpenStack, VMWare, and more).
 
-![tf_1wkflw](images/tf_1wkflw.png)
+![tf_1workflow](images/tf_1wkflw.png)
 
 **REPRODUCIBLE INFRASTRUCTURE**
 Terraform lets operators easily use the same configurations in multiple places to reduce mistakes and save time.
@@ -52,11 +52,11 @@ Common Terraform configurations can be packaged as modules and used across teams
 Terraform allows you to effortlessly combine high-level system providers. Launch a server from one cloud provider, add
 a DNS entry with its IP with a different provider. Built-in dependency resolution means things happen in the right order.
 
-![tf_beni](images/tf_beni.png)
+![tf_benefits](images/tf_beni.png)
 
 ### How it works
 
-* Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.
+* Configuration files describe to Terraform the components needed to run a single application or your entire data center.
 * Terraform generates an execution plan describing what it will do to reach the desired state
 * Then terraform executes the plan to build the described infrastructure.
 * As the configuration changes, Terraform is able to determine what changed and create incremental execution plans
@@ -68,7 +68,7 @@ Terraform can manage low-level components such as compute instances, storage, an
 high-level components such as DNS entries, SaaS features, etc.
 
    * #### Infrastructure as Code
-     Infrastructure is described using a high-level configuration syntax. This allows a blueprint of your datacenter to be
+     Infrastructure is described using a high-level configuration syntax. This allows a blueprint of your data center to be
      versioned and treated as you would any other code. Additionally, infrastructure can be shared and re-used.
 
    * #### Execution Plans
@@ -108,10 +108,10 @@ HCL is a templating language that is both easy for humans and machines to read.
 ## 4. Workflows Matter
 
 Terraform provides a common **workflow** to provision infrastructure resources across multiple clouds and providers.
-This workflow makes high velicity 
+This workflow makes high velocity 
 
-   * **PLAN** - In this phase, the HCL configuration is compared against deployed resouces.  The user is informed of
-   the changes that will be made to the infrasrtucture. This is very important for understanding the impact of a change.
+   * **PLAN** - In this phase, the HCL configuration is compared against deployed resources.  The user is informed of
+   the changes that will be made to the infrastructure. This is very important for understanding the impact of a change.
    
         In the following example, terraform plan 1 new resource will be deployed
    

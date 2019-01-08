@@ -1,4 +1,4 @@
-# Cloudshift Terraform Training
+# Cloud Shift Strategies Terraform Training
 
 # DAY 1 Syllabus
 
@@ -9,7 +9,7 @@
     * [Terraform Workflow - plan, apply, destroy](docs/introduction.md#4-workflows-matter)
     * [Terraform Enterprise](docs/introduction.md#5-terraform-enterprise)
     
-2. [Lab Prereqs](docs/prereqs.md)
+2. [Lab Prerequisites](docs/prereqs.md)
     * [Sign up for accounts](docs/prereqs.md#sign-up-for-accounts)
     * [Install software](docs/prereqs.md#install-software)
     
@@ -36,7 +36,11 @@
 
 # DAY 2 Syllabus
     
-1. Terraform Enterprise
+1. [Terraform Enterprise Overview](docs/tfe101.md)
+    * [What is Terraform Enterprise](docs/tfe101.md#what-is-terraform-enterprise)
+    * [Key Concepts](docs/tfe101.md#key-concepts)
+
+2. [Git / GitHub Overview](docs/github.md)
 
 2. Infrastructure as code version control
 

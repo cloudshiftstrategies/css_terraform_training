@@ -1,4 +1,4 @@
-# Lab prereqs
+# Lab prerequisites
 
 ## Sign up for accounts
 
@@ -10,14 +10,14 @@ Sign up for a [github account](https://github.com/join?source=experiment-header-
 Sign up for a [terraform enterprise account](https://app.terraform.io/account/new)
 * request that your user be added to your companies TFE organization
 
-### 3. Cloud Acount (AWS or Azure)
+### 3. Cloud Account (AWS or Azure)
 * Create an AWS free account at https://aws.amazon.com/free/
 * Create an Azure free account at https://azure.microsoft.com/en-us/free/
 * or contact company cloud admin 
 
 ## Install software
 
-### 1. Terrafrom 
+### 1. Terraform 
 Download appropriate terraform package [here](https://www.terraform.io/downloads.html)
 * Linux/macs- unzip terraform binary and copy to a $PATH dir (/usr/local/bin/terraform)
 * Windows- unzip terraform.exe and copy to a %PATH% dir (c:\Windows\System32\terraform.exe)
