@@ -39,7 +39,7 @@ Credit to https://www.intertech.com/Blog/introduction-to-git-concepts/ for much 
 
 ![git concepts](images/IntroToGitConcepts_thumb.png)
 
-### Repositories
+#### Repositories
 
 A repository is a library of files stored together in a directory structure, usually representing an application
 or project.
@@ -49,7 +49,7 @@ Git has two repository types: local and remote.
 * The **local repository** is on your computer for only your direct use. The local repo is on your computer and has all the
    files and their commit history, enabling full diffs, history review, and committing when offline. 
 
-## Clone remote repositories
+#### Clone remote repositories
 
 Use the Git clone command to create a local repo with all of the remote repo’s history.
 Only use this command once to create the local repo from a remote.
@@ -60,7 +60,7 @@ The above command creates a directory called `gitreponame` in the current workin
 
 Now you can get to work editing files
 
-## Commit your work to the remote repository
+#### Commit your work to the remote repository
 
 After editing the files in your local repository, committing code to the remote repository is a 3 stage process
 
@@ -95,7 +95,7 @@ git commit -m "commit message"
 git push
 ```
 
-### Use "pull" to update your local repository from remote
+#### Use "pull" to update your local repository from remote
 
 When you want to update your local repository with updated code in the remote repository you can use  th `git pull`
 command.
@@ -108,7 +108,7 @@ remote code with your local code.
 git pull
 ```
 
-### Tag your code to create a release
+#### Tag your code to create a release
 
 When you apply a tag to a specific commit, you are naming the project it its current state so that we can access a
 very specific version of a commit with simple references. When code is ready to be
@@ -165,7 +165,7 @@ module "network-module" {
 }
 ```
 
-### Branches and pull requests
+#### Branches and pull requests
 
 Git repositories can have multiple branches. The main branch is usually called "master". 
 
@@ -234,7 +234,7 @@ merge your branch back with the master, the "pull request" that you'll submit to
 [speculative plan](tfe201.md#speculative-planshttpswwwterraformiodocsenterpriserunindexhtmlspeculative-plans)
 which helps to determine if the branch should be merged
 
-### [Github Repos & TFE workspaces structure](https://www.terraform.io/docs/enterprise/workspaces/repo-structure.html)
+#### [Github Repos & TFE workspaces structure](https://www.terraform.io/docs/enterprise/workspaces/repo-structure.html)
 
 There are several ways to organize your TFE workspaces and github repos. Usually, each workspace has one github
 repo, and the workspace is pointing to the master branch.

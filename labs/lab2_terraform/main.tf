@@ -79,9 +79,9 @@ resource "azurerm_virtual_machine" "main" {
   }
   # configure os settings
   os_profile {
-    computer_name  = "${local.prefix}"
+    computer_name  = "${ replace(local.prefix,"_","") }"
     admin_username = "testadmin"
-    admin_password = "${local.prefix}"
+    admin_password = "Password123!"
   }
   os_profile_linux_config {
     disable_password_authentication = false

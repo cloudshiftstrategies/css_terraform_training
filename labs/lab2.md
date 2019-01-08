@@ -67,40 +67,116 @@ Open terminal
 Copy the repo http url from Github.com
 ![gh clone link](images/gh_clone_link.png)
 
-Execute the following command in the Azure terminal, replacing YOUR_ORG and ABC
+Execute the following command in the Azure terminal, replacing YOUR_EMAIL, YOUR_NAME, YOUR_ORG and YOUR_INITIALS
 ```bash
-git clone https://github.com/YOUR_ORG/tfe_lab_ABC.git
+git config --global user.email "YOUR_EMAIL"
+git config --global user.name "YOUR_NAME"
+git clone https://github.com/YOUR_ORG/tfe_lab_YOUR_INITIALS.git
 cd tfe_lab_*
 ```
 
-####3.3 Upload a terraform file
+####3.3 Upload a terraform file and trigger a run
 
-Download the maint.tf sample file
+Download this lab's [maint.tf](https://raw.githubusercontent.com/cloudshiftstrategies/css_terraform_training/master/labs/lab2_terraform/main.tf)
+sample file to your PC, then upload the file to the azure terminal
 
-to your PC then upload to azure terminal
+![azure upload](images/azure_upload.png)
 
-## trigger a plan with VCS change
+The file will be uploaded to your home directory. Copy the file to the project
 
-## view plan
+```bash
+cp $HOME/main.tf .
+```
 
-## apply run
+Use the editor to edit the initials variable
 
-## create a branch
+![main edit](images/main_edit.png)
 
-## test locally, see speculative plan
+####3.4 trigger a TFE run with VCS commit/push
 
-## create pull request to merge, see speculative plan
+```bash
+git add .
+git commit -m "first commit"
+git push
+```
 
-# 1 person... 
-# Create a github repo for module (fork?)
+####3.5 view plan
 
-# create a private module in tfe
+Take a look at the run on https://app.terraform.io/app
+![tfe_runs](images/tfe_run.png)
 
-# branch - reference private module from workspace code
 
-# pull request - check speculative plan
+####3.6 apply run
 
-# apply
+Click Confirm & Apply to apply the run
+![apply](images/tfe_confirm1.png)
 
-# 1 person
-# create centenal policy
+verify that the change applied successfully
+
+##4. create a branch and pull request
+
+####4.1 Create a local branch of your code so that you can test changes without triggering a run
+
+```bash
+git checkout -b my_branch
+```
+
+Edit main.tf to add a new tag to the vm 
+```tfe
+  tags {
+    environment = "tfe_lab"
+    department = "my department"
+  }
+```
+
+Now commit the branch
+
+```bash
+git add .
+git commit -m "added department tag to vm"
+git push --set-upstream orgin my_branch
+```
+
+####4.2 Create pull request to merge branch with master
+Go to github and confirm that the new tag exists, and submit a pull request
+![gh pull](images/gh_pull.png)
+
+####4.3 Look at the speculative plan created in GH
+
+Click on the details link to be taken to the speculative plan
+![gh_pr](images/gh_pr.png)
+
+Notice the changes. An notice that this did not trigger a run!
+![tfe_spec](images/tfe_spec_plan.png)
+
+Then Accept the pull regest in Github
+
+And confirm that a run started in TFE
+
+Accept the change and apply the new tag
+![tfe_merge](images/tfe_merge.png)
+
+##5. cleanup
+
+####5.1 Destroy the infrastructure
+
+in TFE, Workspaces > tfe_lab_ABC > variables > environment variables >  CONFIRM_DESTROY = 1
+
+in TFE, Workspaces > tfe_lab_ABC > Settings > Destruction & Deletion > Queue Destroy Plan > Apply
+
+####5.2 Delete the TFE workspace
+
+in TFE, Workspaces > tfe_lab_ABC > Settings > Destruction & Deletion > Delete Workspace
+
+####5.3 Delete the github repo
+
+Github Repo > Settings > Delete this repository
+
+####5.4 Delete the project in azure shell
+
+```bash
+cd $HOME
+rm -rf tfe_lab_*
+```
+
+[Back to Main page](../README.md)

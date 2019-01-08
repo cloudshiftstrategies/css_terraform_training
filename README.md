@@ -13,7 +13,7 @@
     * [Sign up for accounts](docs/prereqs.md#sign-up-for-accounts)
     * [Install software](docs/prereqs.md#install-software)
     
-3. **BREAK**
+   **BREAK**
     
 4. [HCL 101](docs/hcl101.md) - The basics
     * [HCL project files](docs/hcl101.md#hcl-project-files)
@@ -30,27 +30,37 @@
     * [Math](docs/hcl301.md#math)
     * [State Files](docs/hcl301.md#state-files)
     
-7. **BREAK**
+    **BREAK**
 
 8. [Day 1 Lab - Terraform Open Source](labs/lab1.md)
 
 # DAY 2 Syllabus
     
-1. [Terraform Enterprise Overview](docs/tfe101.md)
+1. [Terraform Enterprise 101](docs/tfe101.md) - The basics
     * [What is Terraform Enterprise](docs/tfe101.md#what-is-terraform-enterprise)
     * [Key Concepts](docs/tfe101.md#key-concepts)
 
-2. [Git / GitHub Overview](docs/github.md)
+2. [Terraform Enterprise 201](docs/tfe201.md) - Advanced features
+    * [Speculative Plans](docs/tfe201.md#speculative-planshttpswwwterraformiodocsenterpriserunindexhtmlspeculative-plans)
+    * [Run Intractions](docs/tfe201.md#run-intractionshttpswwwterraformiodocsenterpriserunindexhtmlinteracting-with-runs)
+    * [Locking workspaces](docs/tfe201.md#locking-workspaceshttpswwwterraformiodocsenterpriserunindexhtmllocking-workspaces-preventing-runs-)
+    * [Workspace state](docs/tfe201.md#workspace-statehttpswwwterraformiodocsenterpriserunindexhtmlterraform-state-in-tfe)
+    * [Cross-Workspace State Access](docs/tfe201.md#cross-workspace-state-accesshttpswwwterraformiodocsenterpriserunindexhtmlcross-workspace-state-access)
 
-2. Infrastructure as code version control
+    **BREAK**
 
-3. **BREAK**
+3. [Terraform Enterprise 301](docs/tfe301.md) - Expert features
+    * [Sentinel Policy as code](docs/tfe301.md#sentinel-policy-as-codehttpswwwterraformiodocsenterprisesentinelindexhtml)
+    * [TFE API](docs/tfe301.md#tfe-apihttpswwwterraformiodocsenterpriseapiindexhtml)
+    * [TFE password reset](docs/tfe301.md#tfe-password-resethttpsgithubcomcloudshiftstrategiestfe_passwd_reset)
 
-4. Terraform Enterprise Operations
+4. [Git / GitHub Overview](docs/github.md)
+    * [What is git](docs/github.md#what-is-git)
+    * [What is github](docs/github.md#what-is-github)
+    * [Key git concepts](docs/github.md#key-git-concepts)
 
-5. Day 2 Lab - Terraform Enterprise
+    **BREAK**
+
+5. [Day 2 Lab - Terraform Enterprise](labs/lab2.md)
     
 [Additional Resources](docs/resources.md)
-
-
-    
