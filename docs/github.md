@@ -245,4 +245,4 @@ document
 
 [Back to Main page](../README.md)
 
-[Next page - Day 1 Lab](../labs/lab1.md)
+[Next page - Day 1 Lab](../labs/lab2.md)
