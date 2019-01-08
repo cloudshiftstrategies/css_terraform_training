@@ -47,4 +47,4 @@ To get API credentials for your AWS or Azure cloud account
             
 **Windows users**: you might like software package management tool called choco (https://chocolatey.org/) which 
         allows you to download and install all lab requirements with one powershell command!
-        `choco install -y terraform git atom awscli azure-cli sam2aws`
+        `choco install -y terraform git atom awscli azure-cli saml2aws`
