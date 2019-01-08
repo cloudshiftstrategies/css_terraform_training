@@ -134,7 +134,7 @@ Now commit the branch
 ```bash
 git add .
 git commit -m "added department tag to vm"
-git push --set-upstream orgin my_branch
+git push --set-upstream origin my_branch
 ```
 
 ####4.2 Create pull request to merge branch with master
