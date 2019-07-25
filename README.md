@@ -42,7 +42,7 @@
 
 2. [Terraform Enterprise 201](docs/tfe201.md) - Advanced features
     * [Speculative Plans](docs/tfe201.md#speculative-planshttpswwwterraformiodocsenterpriserunindexhtmlspeculative-plans)
-    * [Run Intractions](docs/tfe201.md#run-intractionshttpswwwterraformiodocsenterpriserunindexhtmlinteracting-with-runs)
+    * [Run Interactions](docs/tfe201.md#run-intractionshttpswwwterraformiodocsenterpriserunindexhtmlinteracting-with-runs)
     * [Locking workspaces](docs/tfe201.md#locking-workspaceshttpswwwterraformiodocsenterpriserunindexhtmllocking-workspaces-preventing-runs-)
     * [Workspace state](docs/tfe201.md#workspace-statehttpswwwterraformiodocsenterpriserunindexhtmlterraform-state-in-tfe)
     * [Cross-Workspace State Access](docs/tfe201.md#cross-workspace-state-accesshttpswwwterraformiodocsenterpriserunindexhtmlcross-workspace-state-access)

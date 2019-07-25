@@ -70,20 +70,34 @@ high-level components such as DNS entries, SaaS features, etc.
    * #### Infrastructure as Code
      Infrastructure is described using a high-level configuration syntax. This allows a blueprint of your data center to be
      versioned and treated as you would any other code. Additionally, infrastructure can be shared and re-used.
+     ```hcl-terraform
+     resource "aws_instance" "web" {
+         ami = "ami-0d8f6eb4f641ef691"
+         instance_type = "t2.micro"
+         security_groups = [aws_security_group.web.name]
+     }
+     
+     resource "aws_security_group" "web" {
+       name = "web-sg"
+     }
+     ```
 
    * #### Execution Plans
      Terraform has a "planning" step where it generates an execution plan. The execution plan shows what Terraform will
      do when you call apply. This lets you avoid any surprises when Terraform manipulates infrastructure.
+     ![terraform-plan](images/terraform-plan.png)
 
    * #### Resource Graph
      Terraform builds a graph of all your resources, and parallelizes the creation and modification of any non-dependent
      resources. Because of this, Terraform builds infrastructure as efficiently as possible, and operators get insight
      into dependencies in their infrastructure.
+     ![terraform-graph](images/terraform-graph-example.png)
 
    * #### Change Automation
      Complex changesets can be applied to your infrastructure with minimal human interaction. With the previously mentioned
      execution plan and resource graph, you know exactly what Terraform will change and in what order, avoiding many possible
      human errors.
+     ![terraform-apply](images/terraform-apply.png)
      
 ## 3. What is HCL (Hashicorp Language)
 Terraform provides a common **language** to provision infrastructure resources across multiple clouds and providers.
@@ -108,7 +122,7 @@ HCL is a templating language that is both easy for humans and machines to read.
 ## 4. Workflows Matter
 
 Terraform provides a common **workflow** to provision infrastructure resources across multiple clouds and providers.
-This workflow makes high velocity 
+This workflow enables change at high velocity 
 
    * **PLAN** - In this phase, the HCL configuration is compared against deployed resources.  The user is informed of
    the changes that will be made to the infrastructure. This is very important for understanding the impact of a change.

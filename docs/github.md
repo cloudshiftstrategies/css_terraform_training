@@ -51,7 +51,7 @@ Git has two repository types: local and remote.
 
 #### Clone remote repositories
 
-Use the Git clone command to create a local repo with all of the remote repo’s history.
+Use the `git clone` command to create a local repo with all of the remote repo’s history.
 Only use this command once to create the local repo from a remote.
 
 `$ git clone http://username@hostname.com/giturl/gitreponame.git`
@@ -76,7 +76,7 @@ After editing the files in your local repository, committing code to the remote 
     Note: When making additional edits to a file after staging it, the staged
     file does not contain the additional edits. You have to run `git add .` again before the next step.
     
-2. **Commit** Next you must commits all staged files together as an atomic commit to the local repo.
+2. **Commit** Next you must commit all staged files together as an atomic commit to the local repo.
 
     In this stage we commit the staged files, and must provide a commit message, describing the change made
     
@@ -116,7 +116,9 @@ release, software engineers tag the commit with a version number (v1.2.3) and ca
 
 Creating a release on GitHub is easy. 
 ![gh_release1](images/gh_release1.png)
+
 ![gh_release2](images/gh_release2.png)
+
 ![gh_release3](images/gh_release3.png)
 
 Creating a release with the git cli takes a few more steps
@@ -151,17 +153,27 @@ $ cd lambda_bash
 # see what tags are available
 $ git tag
 v0.1.0
+v0.1.2
+v0.1.3
 
 # switch the local repository to a specific tag
 $ git checkout tags/v0.1.0
 ```
 
-Note that terraform **private modules must be tagged** with versions, so that callers of the module can rely upon
-the code not changing unless the caller specifically calls for another version
+Note that terraform **private modules must be tagged** uses tags to identify module versions. Release tag names
+must be a [semantic version](http://semver.org/), which can optionally be prefixed with a v. For example, v1.0.4 and 0.9.2. To publish
+a module initially, at least one release tag must be present. Tags that don't look like version numbers are
+ignored.
+
+Semantic Versioning assigns version number MAJOR.MINOR.PATCH where increments in each mean:
+- **MAJOR** incompatible API changes,
+- **MINOR** add functionality in a backwards-compatible manner, and
+- **PATCH** make backwards-compatible bug fixes.
+
 ```hcl
 module "network-module" {
   source  = "app.terraform.io/ORG_NAME/terraform-aws-network-module"
-  version = "1.4"
+  version = "1.4.0"
 }
 ```
 
@@ -192,14 +204,14 @@ $ git branch
 
 # make changes and commit the branch
 $ git add .
-git commit -m "working on feature"
+$ git commit -m "working on feature"
 
 # Push the branch to remote. We need to explicitly specify that we want to push our test_branch
-git push --set-upstream origin test_branch
+$ git push --set-upstream origin test_branch
 ```
 
 Looking at Github, we can see the branch was created and pushed, and we even have a button to submit a pull request. 
-If this is a TFE project, the pull request would trigger a speculative run
+If this is a TFE project, the pull request would trigger a speculative run (more on this later)
 ![gh branch](images/gh_branch.png)
 
 A project administrator can merge the test_branch with master, just submit the request.
@@ -245,4 +257,4 @@ document
 
 [Back to Main page](../README.md)
 
-[Next page - Day 1 Lab](../labs/lab2.md)
+[Next page - Day 1 Lab](../labs/lab1.md)

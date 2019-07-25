@@ -5,10 +5,12 @@ provider "aws" {
 }
 
 # define a variable called instance_count but dont provide a default so that user will be prompted to provide
-variable "instance_count" { }
+variable "instance_count" {
+  default = 1
+}
 # define a variable with my name set as the default (can be over-ridden at run-time)
 variable "my_name" {
-  default = "Brian Peterson"
+  default = "YOUR_NAME"
 }
 
 # create a number of EC2 instances

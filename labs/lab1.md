@@ -1,15 +1,18 @@
 # Lab 1
 
-1. Using powershell or terminal app, run `terraform --version` to determine the version of terraform installed
+0. Complete the [prerequisites](../docs/prereqs.md) to configure your environment
 
-        terraform --version
+1. Using powershell or mac/linux terminal app, run `terraform --version` to determine the version of terraform
+   installed. Ensure that terraform is in your path and the version is 0.12 or later
+
+        $ terraform --version
         
-        Terraform v0.11.11
+        Terraform v0.12.05
         
 2. Create a new project folder in your home directory 
 
-        cd $HOME
-        mkdir terrafrom_lab1
+        $ cd $HOME
+        $ mkdir terrafrom_lab1
         
      Note, you can make this directory with whatever name in wherever location you like
 
@@ -89,28 +92,28 @@
         first_output = Brian Peterson
         ```
         
-8. Login to AWS using ADFS with the saml2aws utility
- 
-    * run `saml2aws configure` with the following parameters
-    
-        * Provider: ADFS
-        * URL: YOUR_ADFS_LOGIN_URL < ex. https://adfs.company.com/adfs/ls/IdpInitiatedSignOn.aspx
-        * Username: AD_USER_EMAIL < ex. joe.user@company.com
-        * MFA: Auto
-        * Profile: default < can use anything, but default is easiest
-        
-    * run `saml2aws login` and login using your AD username/password
-    
-        * Username: AD_USER_EMAIL
-        * Password: AD_PASSWORD
-        * Please choose role: Select an *administrative* role in a *NON PROD* account
-        
-    * run `aws ec2 describe-instances --region us-east-2`
+8. Configure AWS API Credentials 
+    * **Linux/Mac** 
+        ```
+        $ export AWS_ACCESS_KEY_ID=XXX
+        $ export AWS_SECRET_ACCESS_KEY=YYY
+        ```
+    * **Windows Powershell**
+        ```
+        PS C:\> $Env:AWS_ACCESS_KEY_ID="XXX"
+        PS C:\> $Env:AWS_SECRET_ACCESS_KEY="YYY"
+        ```
+      
+    * Run an arbitrary AWS command to ensure that you are authenticated
+        ```
+        aws ec2 describe-instances --region=us-east-2
+        ```
     
 9. Add a cloud provider and aws_instance to your main.tf
     
-    * Define the provider as "aws", region "us-east-2", do not specify credentials as many examples show
-    * Define a data resouces that looks up the latest ubuntu AMI
+    * Define the provider as "aws", region "us-east-2", do not specify credentials as we do not want
+      to commit credentials into a github repo and they will be read from your environment variables set above
+    * Define a data resource that looks up the latest ubuntu AMI
     * Define an aws ec2 vm instance of type: t2_micro and ami: ami-050553a7784d00d21" with a tag:Name = var.my_name
     * Define a single output called instance_id to be the aws instance id
     
@@ -124,31 +127,32 @@
       region = "us-east-2"
     }
  
-    # Get the latest ubuntu 18.04 image
+    # Get the latest ubuntu 18.04 image owned by Canonical
     data "aws_ami" "my_ami" {
+        most_recent = true
+        owners = ["099720109477"]
         filter {
             name = "name"
             values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
         }
-        most_recent = true
     }
 
     # Deploy an instance named after me
     resource "aws_instance" "my_instance" {
-      ami = "${data.aws_ami.my_ami.id}"
+      ami = data.aws_ami.my_ami.id
       instance_type = "t2.micro"
       tags = {
-        Name = "${var.my_name}"
+        Name = var.my_name
       }
     }
 
-    # A variable with my name
+    # A variable with for my_name
     variable "my_name" {
     }
 
     # Return the aws instance id
     output "instance_id" {
-      value = "${aws_instance.my_instance.id}"
+      value = aws_instance.my_instance.id
     }
     ```
     
@@ -235,29 +239,28 @@
     "terraform apply" is subsequently run.
     
     ```
-12. Run **terraform appy** to deploy the resources
+12. Run **terraform apply** to deploy the resources
  
     `terraform apply`
     
-    Terraform will prompt you for a "yes" to make sure that you want to execute the operation
-    
+    Terraform will prompt you for a "yes" to make sure that you want to execute the operation.
     When complete, terraform will output the instance_id
     
-    Plug your instance_id into the command below to see your instance in AWS 
+    Plug the instance_id returned in output into the command below to see your instance in AWS 
     
-    `aws ec2 describe-instances --filters 'Name=instance-id,Values=INSERT_INSTANCE_ID_HERE'`
+    ```
+    aws ec2 describe-instances --filters 'Name=instance-id,Values=INSERT_INSTANCE_ID_HERE'
+    ```
     
-    or Plug in your name in the command below to see your instance
-    
-    `aws ec2 describe-instances --filters 'Name=tag:Name,Values="INSERT_YOUR_NAME_HERE"'`
-    
-    *cli tip*: install the jq json parser to make the AWS and azure CLI's easy to parse
+    * *cli tip*: install the jq json parser to make the AWS and azure CLI's easy to parse
     
       Windows run `choco install jq` and Mac users run `brew install jq` and linux users, you know what to do
     
-    `aws ec2 describe-instances --filters 'Name=instance-id,Values=INSERT_INSTANCE_ID_HERE' | jq .Reservations[].Instances[].Tags`
+      ```
+      aws ec2 describe-instances --filters 'Name=instance-id,Values=INSERT_INSTANCE_ID_HERE' | jq .Reservations[].Instances[].Tags`
+      ```
     
-    Or use ADFS to go to the AWS account's console > EC2 > Ohio Region
+    Or use AWS AWS Console > Services > EC2 > Instances
     
     ![bp instances](images/bp_inst.png)
     
@@ -352,3 +355,40 @@
 
     Destroy complete! Resources: 1 destroyed.
     ```
+    
+ ## Day 1 Challenge (optional)
+ 
+ This challenge will test your ability to put infrastructure as code together in more complex
+ and powerful ways.
+ 
+ Create a terraform file called main.tf that creates a number of ec2 instances each with the following parameters. 
+ - AWS region is "us-east-2"
+ - AWS instance ami is "ami-0d8f6eb4f641ef691"
+ - AWS instance_type is "t2.micro"
+ - Each ec2 instance must be tagged with "Name":"<your name>-<instance number>" where instance number is the 
+   unique instance number starting from 1 (not zero). Example: "Brian Peterson-1", "Brian Peterson-2"
+ - The number of instances desired must be input as a variable at runtime. Can be provided by any of the following
+     - via user at runtime, prompted interactively by terraform plan/apply/destroy commands
+     - via CLI -var parameter on terraform command line
+     - via a .tfvars file specified by -var-file parameter on terraform command line
+     - via TF_xxx environment variable
+     - via a xx.auto.tfvars file
+ - The project **should not allow** the user to specify more than 2 instances
+ - The project should output the aws_instance private_ip of each instance created
+    
+ Hints and documentation:
+ - Terraform AWS Provider [documentation](https://www.terraform.io/docs/providers/aws/index.html)
+ - Terraform AWS Provider EC2 Instance [documentation](https://www.terraform.io/docs/providers/aws/r/instance.html)
+ - Terraform input variables [documentation](https://www.terraform.io/docs/configuration/variables.html)
+ - Terraform output values [documentation](https://www.terraform.io/docs/configuration/outputs.html)
+ - Terraform count meta-argument [documentation](https://www.terraform.io/docs/configuration/resources.html#count-multiple-resource-instances)
+ - Terraform conditional expressions [documentation](https://www.terraform.io/docs/configuration/expressions.html#conditional-expressions)
+ - Terraform arithmetic operations [documentation](https://www.terraform.io/docs/configuration/expressions.html#arithmetic-and-logical-operators)
+ - A working example can be found [here](lab1_terraform/main.tf)
+ 
+ Do not forget to run `terraform destory` when compete
+
+ 
+ 
+ 
+ 

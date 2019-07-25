@@ -4,10 +4,10 @@
 
 ### 1. Github
 Sign up for a [github account](https://github.com/join?source=experiment-header-dropdowns-home)
-* request that your user be added to your company's GitHub organization
+* or request that your user be added to your company's GitHub organization
 
 ### 2. Terraform Enterprise
-Sign up for a [terraform enterprise account](https://app.terraform.io/account/new)
+Sign up for a [terraform cloud account](https://app.terraform.io/account/new)
 * request that your user be added to your companies TFE organization
 
 ### 3. Cloud Account (AWS or Azure)
@@ -37,11 +37,14 @@ Download appropriate terraform package [here](https://www.terraform.io/downloads
   [PyCharm Terraform plugin](https://plugins.jetbrains.com/plugin/7808-hashicorp-terraform--hcl-language-support)
   
 ### 4. Cloud CLI (aws or az)
-To get API credentials for your AWS or Azure cloud account
+To get API credentials AWS
 * For an AWS API credentials for an IAM user (not SAML SSO), see the 
   [this documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
-* To get AWS API credentials when using SAML SSO, you'll need to install can configure the tool: 
+* To get AWS API credentials when using SAML SSO (not AWS SSO), you'll can install can configure the tool: 
   [saml2aws](https://github.com/Versent/saml2aws)
+* To get AWS API credentials when using AWS Managed SSO 
+  [this documentation](https://aws.amazon.com/blogs/security/aws-single-sign-on-now-enables-command-line-interface-access-for-aws-accounts-using-corporate-credentials/)
+To get API credentials for Azure
 * To Azure get credentials, you'll need to install the Azure CLI
   [instructions here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest)
             
