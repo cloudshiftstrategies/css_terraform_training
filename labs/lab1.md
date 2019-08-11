@@ -111,14 +111,17 @@
 9. Add a provider (AWS) and aws_instance (EC2) to your main.tf
     
     * Define the provider as "aws", region "us-east-2", do not specify credentials as we do not want
-      to commit credentials into a github repo and they will be read from your environment variables set above
-    * Define a data resource that looks up the latest ubuntu AMI
-    * Define an aws ec2 vm instance of type: t2_micro and ami: ami-050553a7784d00d21" with a tag:Name = var.my_name
-    * Define a single output called instance_id to be the aws instance id
+      to commit credentials into a github repo and they will be read from your environment variables set above. See
+      AWS provider doc [here](https://www.terraform.io/docs/providers/aws/index.html)
+    * Define a data resource that looks up the latest ubuntu AMI. Documentation for aws_ami data source can be found
+      [here](https://www.terraform.io/docs/providers/aws/d/ami.html)
+    * Define an aws ec2 vm instance of type: t2_micro and ami: ami-050553a7784d00d21" with a tag:Name = var.my_name.
+      Documentation for aws_instance can be found [here](https://www.terraform.io/docs/providers/aws/r/instance.html)
+    * Define a single output called instance_id to be the aws instance id. See aws_instance documentation above 
+      for a list of attributes availible for the aws_instance resource and see the output documentation 
+      [here](https://www.terraform.io/docs/configuration/outputs.html)
     
-      *hint* go to https://www.terraform.io/docs/index.html > Providers > AWS to see documentation
-      
-    The complete main.tf example is below
+    The completed main.tf example is below
         
     ```hcl
     # main.tf
