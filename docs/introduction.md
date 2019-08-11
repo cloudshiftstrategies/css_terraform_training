@@ -12,6 +12,8 @@ HashiCorp Terraform enables you to safely and predictably create, change, and im
 
 ![tf_workflow](images/tf_wkflow.png)
 
+----
+
 **INFRASTRUCTURE AS CODE** Define infrastructure as code to increase operator productivity and transparency.
 
 **COLLABORATE & SHARE** Terraform configurations can be stored in version control, shared, and collaborated on by
