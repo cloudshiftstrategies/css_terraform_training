@@ -10,9 +10,9 @@ HashiCorp Terraform enables you to safely and predictably create, change, and im
 * It is an open source tool that codifies APIs into declarative configuration files 
 * can be shared amongst team members, treated as code, edited, reviewed, and versioned.
 
-![tf_workflow](images/tf_wkflow.png)
+---
 
-----
+![tf_workflow](images/tf_wkflow.png)
 
 **INFRASTRUCTURE AS CODE** Define infrastructure as code to increase operator productivity and transparency.
 
@@ -22,6 +22,8 @@ teams of operators.
 **EVOLVE YOUR INFRASTRUCTURE** Track the complete history of infrastructure versions.
 
 **AUTOMATION FRIENDLY** If it can be codified, it can be automated.
+
+---
 
 ![tf_iac](images/tf_iac.png)
 
@@ -39,6 +41,8 @@ execute changes.
 **ONE SAFE WORKFLOW**
 Use Terraform to create resources across all major infrastructure providers (AWS, GCP, Azure, OpenStack, VMWare, and more).
 
+---
+
 ![tf_1workflow](images/tf_1wkflw.png)
 
 **REPRODUCIBLE INFRASTRUCTURE**
@@ -54,6 +58,8 @@ Common Terraform configurations can be packaged as modules and used across teams
 Terraform allows you to effortlessly combine high-level system providers. Launch a server from one cloud provider, add
 a DNS entry with its IP with a different provider. Built-in dependency resolution means things happen in the right order.
 
+---
+
 ![tf_benefits](images/tf_beni.png)
 
 ### How it works
@@ -63,6 +69,8 @@ a DNS entry with its IP with a different provider. Built-in dependency resolutio
 * Then terraform executes the plan to build the described infrastructure.
 * As the configuration changes, Terraform is able to determine what changed and create incremental execution plans
   which can be applied.
+  
+---
   
 ## 2. What can terraform do?
 

@@ -34,6 +34,7 @@
 
 8. [Day 1 Lab - Terraform Open Source](labs/lab1.md)
 
+---
 # DAY 2 Syllabus
     
 1. [Terraform Enterprise 101](docs/tfe101.md) - The basics
