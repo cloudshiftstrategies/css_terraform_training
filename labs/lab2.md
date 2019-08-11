@@ -21,6 +21,8 @@ Create a new github repository named `tfe_lab_ABC` where ABC are your initials *
  * check Initialize this repository with a README
  * select the Terraform .gitignore template
 
+---
+
 ##2. Configure TFE workspace
 
 ####2.1  Validate TFE login
@@ -46,9 +48,11 @@ Aws requires:
 Example AWS credentials set:
 ![az_vars](../docs/images/tfe_aws_keys.png)
 
-####4. Install TFE API key
+####2.4. Install TFE API key
 
 TODO: determine if we need to do this
+
+---
 
 ##3. work on project
 
@@ -103,6 +107,8 @@ Click Confirm & Apply to apply the run
 
 verify that the change applied successfully
 
+---
+
 ##4. create a branch and pull request
 
 ####4.1 Create a local "dev" branch of your code so that you can test changes without triggering a run
@@ -146,6 +152,8 @@ And confirm that a run started in TFE
 
 Accept the change and apply the new tag
 ![tfe_merge](images/tfe_merge.png)
+
+---
 
 ##5. cleanup
 
