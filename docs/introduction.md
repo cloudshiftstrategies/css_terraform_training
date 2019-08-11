@@ -81,7 +81,7 @@ high-level components such as DNS entries, SaaS features, etc.
    * #### Infrastructure as Code
      Infrastructure is described using a high-level configuration syntax. This allows a blueprint of your data center to be
      versioned and treated as you would any other code. Additionally, infrastructure can be shared and re-used.
-     ```hcl-terraform
+     ```hcl
      resource "aws_instance" "web" {
          ami = "ami-0d8f6eb4f641ef691"
          instance_type = "t2.micro"
@@ -122,7 +122,7 @@ high-level components such as DNS entries, SaaS features, etc.
 Terraform provides a common **language** to provision infrastructure resources across multiple clouds and providers.
 
 Example HCL template called main.tf will create an AWS virtual machine
-```hcl-terraform
+```hcl
 # main.tf
 provider "aws" {
   access_key = "ACCESS_KEY_HERE"

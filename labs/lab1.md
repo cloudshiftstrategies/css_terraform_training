@@ -40,7 +40,7 @@
     
     * Set the output name name: "first_output" with a value of "hello world"
     
-    ```hcl-terraform
+    ```hcl
     # main.tf
     output "first_output" {
       value = "hello world"
@@ -69,7 +69,7 @@
     * Set the variable name to "my_name" with no default value
     * Set the value of the output: "first_output" to be the value of "my_name"
     
-    ```hcl-terraform
+    ```hcl
     # main.tf
     variable "my_name" {
     }
@@ -121,7 +121,7 @@
       
     The new complete main.tf is below
         
-    ```hcl-terraform
+    ```hcl
     # main.tf
     provider "aws" {
       region = "us-east-2"
@@ -276,7 +276,7 @@
     
 14. Run a `terraform plan` to see what will happen
 
-    ```hcl-terraform
+    ```hcl
     $ terraform plan
     Terraform will perform the following actions:
 
@@ -290,7 +290,7 @@
 
 15. Apply the change using `terraform apply -auto-approve`
 
-    ```hcl-terraform
+    ```hcl
     $ terraform apply -auto-approve
     aws_instance.my_instance: Refreshing state... (ID: i-02abd470f1d011a17)
     aws_instance.my_instance: Modifying... (ID: i-02abd470f1d011a17)
@@ -319,7 +319,7 @@
    
 17. Finally, destroy your resources using `terraform destroy`
  
-    ```hcl-terraform
+    ```hcl
     $ terraform destroy
     aws_instance.my_instance: Refreshing state... (ID: i-02abd470f1d011a17)
 
