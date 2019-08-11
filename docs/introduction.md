@@ -91,23 +91,31 @@ high-level components such as DNS entries, SaaS features, etc.
        name = "web-sg"
      }
      ```
+     
+   ---
 
    * #### Execution Plans
      Terraform has a "planning" step where it generates an execution plan. The execution plan shows what Terraform will
      do when you call apply. This lets you avoid any surprises when Terraform manipulates infrastructure.
      ![terraform-plan](images/terraform-plan.png)
-
+     
+   ---
+   
    * #### Resource Graph
      Terraform builds a graph of all your resources, and parallelizes the creation and modification of any non-dependent
      resources. Because of this, Terraform builds infrastructure as efficiently as possible, and operators get insight
      into dependencies in their infrastructure.
      ![terraform-graph](images/terraform-graph-example.png)
+     
+   ---
 
    * #### Change Automation
      Complex changesets can be applied to your infrastructure with minimal human interaction. With the previously mentioned
      execution plan and resource graph, you know exactly what Terraform will change and in what order, avoiding many possible
      human errors.
      ![terraform-apply](images/terraform-apply.png)
+     
+   ---
      
 ## 3. What is HCL (Hashicorp Language)
 Terraform provides a common **language** to provision infrastructure resources across multiple clouds and providers.
@@ -128,6 +136,8 @@ resource "aws_instance" "example" {
 ```
 
 HCL is a templating language that is both easy for humans and machines to read. 
+
+---
 
 ## 4. Workflows Matter
 
@@ -195,6 +205,7 @@ This workflow enables change at high velocity
     can't guarantee that exactly these actions will be performed if
     "terraform apply" is subsequently run.
 
+---
     
    * **APPLY** - In the apply phase of the workflow, terraform uses provider APIs to provision resources
    
@@ -239,6 +250,8 @@ This workflow enables change at high velocity
 
     Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
     
+---
+    
    * **DESTROY** - Just as it sounds, destroy removes all resources defined
    
         In the following example, our VM is destroyed
@@ -254,6 +267,7 @@ This workflow enables change at high velocity
 
     Destroy complete! Resources: 1 destroyed.
 
+---
 
 ## 5. Terraform Enterprise
 
