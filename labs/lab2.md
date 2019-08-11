@@ -9,9 +9,8 @@ in [lab pre-reqs](../docs/prereqs.md) document.
 
 #### 1.1 Validate github login
 
-Go to https://github.com confirm that you can login. 
-
-Try accessing your company's github organization https://github.com/GH_ORG_NAME
+Go to https://github.com (or your company's private git repo) and confirm that you can login and access the
+organization. 
 
 #### 1.2 Create a new github repo
 
@@ -27,7 +26,8 @@ Create a new github repository named `tfe_lab_ABC` where ABC are your initials *
 
 #### 2.1  Validate TFE login
 
-Go to https://app.terraform.io/app and confirm that you can login and see your organization
+Go to https://app.terraform.io/app (or your company's private TFE install) and confirm that you can login and
+see your organization
 
 #### 2.2 Create a terraform workspace and link to repo
 
