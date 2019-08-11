@@ -251,7 +251,7 @@
     Plug the instance_id returned in output into the command below to see your instance in AWS 
     
     ```
-    aws ec2 describe-instances --filters 'Name=instance-id,Values=INSERT_INSTANCE_ID_HERE'
+    aws ec2 describe-instances --region us-east-2 --filters 'Name=instance-id,Values=INSERT_INSTANCE_ID_HERE'
     ```
     
     * *cli tip*: install the jq json parser to make the AWS and azure CLI's easy to parse
@@ -259,7 +259,7 @@
       Windows run `choco install jq` and Mac users run `brew install jq` and linux users, you know what to do
     
       ```
-      aws ec2 describe-instances --filters 'Name=instance-id,Values=INSERT_INSTANCE_ID_HERE' | jq .Reservations[].Instances[].Tags`
+      aws ec2 describe-instances --region us-east-2 --filters 'Name=instance-id,Values=INSERT_INSTANCE_ID_HERE' | jq .Reservations[].Instances[].Tags`
       ```
     
     Or use AWS AWS Console > Services > EC2 > Instances
