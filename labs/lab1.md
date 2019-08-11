@@ -381,7 +381,7 @@
  - AWS region is "us-east-2"
  - AWS instance ami is "ami-0d8f6eb4f641ef691"
  - AWS instance_type is "t2.micro"
- - Each ec2 instance must be tagged with "Name":"<your name>-<instance number>" where instance number is the 
+ - Each ec2 instance must have a tag called:"Name" with the value: "your_name-instance_number" where instance_number is the 
    unique instance number starting from 1 (not zero). Example: "Brian Peterson-1", "Brian Peterson-2"
  - The number of instances desired must be input as a variable at runtime. Can be provided by any of the following
      - via user at runtime, prompted interactively by terraform plan/apply/destroy commands
@@ -403,8 +403,7 @@
  - A working example can be found [here](lab1_terraform/main.tf)
  
  Do not forget to run `terraform destory` when compete
-
  
- 
+[Back to Main page](../README.md)
  
  
