@@ -9,7 +9,7 @@ Terraform can manage existing and popular service providers as well as custom in
 ### Simple and powerful
 HashiCorp Terraform enables you to safely and predictably create, change, and improve infrastructure.
 * It is an open source tool that codifies APIs into declarative configuration files 
-* can be shared amongst team members, treated as code, edited, reviewed, and versioned.
+* Configurations can be shared amongst team members, treated as code, edited, reviewed, and versioned.
 
 ---
 
@@ -148,7 +148,7 @@ This workflow enables change at high velocity
    * **PLAN** - In this phase, the HCL configuration is compared against deployed resources.  The user is informed of
    the changes that will be made to the infrastructure. This is very important for understanding the impact of a change.
    
-        In the following example, terraform plan 1 new resource will be deployed
+        In the following example, terraform plan reports that 1 new resource will be deployed
    
     $ terraform plan
     Refreshing Terraform state in-memory prior to plan...
