@@ -12,7 +12,7 @@ in [lab pre-reqs](../docs/prereqs.md) document.
 Go to https://github.com (or your company's private git repo) and confirm that you can login and access the
 organization. 
 
-#### 1.2 Create a new github repo
+#### 1.2 Create a new git repo in github or your company's private git repo
 
 Create a new github repository named `tfe_lab_ABC` where ABC are your initials **in your company organization**
 ![gh repo](images/gh_repo1.png)
@@ -48,13 +48,9 @@ Aws requires:
 Example AWS credentials set:
 ![az_vars](../docs/images/tfe_aws_keys.png)
 
-#### 2.4. Install TFE API key
-
-TODO: determine if we need to do this
-
 ---
 
-## 3. work on project
+## 3. Work on your project
 
 #### 3.1 Clone the new github repo you created
 Execute the following command in the terminal to clone the repository you just created
