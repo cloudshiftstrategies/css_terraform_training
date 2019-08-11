@@ -2,8 +2,9 @@
 
 ## 1. What is Terraform?
 
-Terraform is a tool for **building, changing, and versioning infrastructure safely and efficiently**. Terraform can 
-manage existing and popular service providers as well as custom in-house solutions.
+Terraform is a tool for **building, changing, and versioning infrastructure safely and efficiently**.
+
+Terraform can manage existing and popular service providers as well as custom in-house solutions.
 
 ### Simple and powerful
 HashiCorp Terraform enables you to safely and predictably create, change, and improve infrastructure.
