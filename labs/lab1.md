@@ -307,6 +307,7 @@
 
     ```
 
+    
 16. And check the tag value in AWS
  
    ```
@@ -318,8 +319,21 @@
       }
     ]
    ``` 
+
+17. Use `terraform console` to look at state values and interpolation results. (very handy for debugging). Just 
+    type in the full path of the resource and attribute to get it's value
+
+    ```bash
+    $ terraform console
+    
+    > aws_instance.my_instance.ami
+    ami-05c1fa8df71875112
+    
+    > aws_instance.my_instance.public_ip
+    13.59.247.247
+    ```
    
-17. Finally, destroy your resources using `terraform destroy`
+18. Finally, destroy your resources using `terraform destroy`
  
     ```hcl
     $ terraform destroy
