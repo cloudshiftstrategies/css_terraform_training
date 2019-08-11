@@ -33,7 +33,7 @@
 5. Create a new terraform file in the project folder using atom
 
     * Right click terraform_lab1 project directory > New File
-    * Create a new file called main.tf 
+    * Create a new file called main.tf (the file can be called anything you like as long as it has a .tf extension)
     
 6. Create a single output in main.tf 
     
@@ -74,7 +74,7 @@
     }
 
     output "first_output" {
-      value = "${var.my_name}"
+      value = var.my_name
     }
     ```
     
@@ -93,18 +93,18 @@
         
 8. Configure AWS API Credentials 
     * **Linux/Mac** 
-        ```
+        ```bash
         $ export AWS_ACCESS_KEY_ID=XXX
         $ export AWS_SECRET_ACCESS_KEY=YYY
         ```
     * **Windows Powershell**
-        ```
+        ```powershell
         PS C:\> $Env:AWS_ACCESS_KEY_ID="XXX"
         PS C:\> $Env:AWS_SECRET_ACCESS_KEY="YYY"
         ```
       
     * Run an arbitrary AWS command to ensure that you are authenticated
-        ```
+        ```bash
         aws ec2 describe-instances --region=us-east-2
         ```
     
