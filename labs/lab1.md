@@ -118,7 +118,7 @@
     * Define an aws ec2 vm instance of type: t2_micro and ami: ami-050553a7784d00d21" with a tag:Name = var.my_name.
       Documentation for aws_instance can be found [here](https://www.terraform.io/docs/providers/aws/r/instance.html)
     * Define a single output called instance_id to be the aws instance id. See aws_instance documentation above 
-      for a list of attributes availible for the aws_instance resource and see the output documentation 
+      for a list of attributes available for the aws_instance resource and see the output documentation 
       [here](https://www.terraform.io/docs/configuration/outputs.html)
     
     The completed main.tf example is below
