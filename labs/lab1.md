@@ -14,14 +14,13 @@
         $ cd $HOME
         $ mkdir terrafrom_lab1
         
-     Note, you can make this directory with whatever name in wherever location you like
+     Note, you can make this directory with whatever name in any location you like
 
 3. Start the IDE you installed (instructions will be provided for Atom) and install the terraform plugin
 
     * Open the Atom IDE (you can close all the open windows/tabs) 
     * Go to File > Settings > +Install
     * Search for "terraform" > Install the **"language-terraform"** package
-    
     * Search for "ide-terminal" > Install the **"platformio-ide-terminal"** package
 
     ![atom-terraform](images/Atom_tfe_module.PNG)
