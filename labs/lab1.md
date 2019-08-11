@@ -108,7 +108,7 @@
         aws ec2 describe-instances --region=us-east-2
         ```
     
-9. Add a cloud provider and aws_instance to your main.tf
+9. Add a provider (AWS) and aws_instance (EC2) to your main.tf
     
     * Define the provider as "aws", region "us-east-2", do not specify credentials as we do not want
       to commit credentials into a github repo and they will be read from your environment variables set above
@@ -118,7 +118,7 @@
     
       *hint* go to https://www.terraform.io/docs/index.html > Providers > AWS to see documentation
       
-    The new complete main.tf is below
+    The complete main.tf example is below
         
     ```hcl
     # main.tf
