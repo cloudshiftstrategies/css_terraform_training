@@ -56,38 +56,21 @@ TODO: determine if we need to do this
 
 ## 3. work on project
 
-#### 3.1 Login to Azure portal
-
-https://portal.azure.com/ 
-and go to a **non production** subscription
-
-Open terminal
-![azure term](images/azure_term.png)
-
-#### 3.2 Clone the new github repo you created
-
-Configure the git environment if you are using it for the first time
-replacing YOUR_EMAIL, YOUR_NAME, YOUR_ORG and YOUR_INITIALS
-```bash
-git config --global user.email "YOUR_EMAIL"
-git config --global user.name "YOUR_NAME"
-```
-
-#### 3.3 Clone the new github repo you created
+#### 3.1 Clone the new github repo you created
 Execute the following command in the terminal to clone the repository you just created
 ```bash
 git clone https://github.com/YOUR_ORG/tfe_lab_YOUR_INITIALS.git
 cd tfe_lab_*
 ```
 
-#### 3.4 Download the sample AWS terraform file and trigger a run
+#### 3.2 Download the sample AWS terraform file and trigger a run
 
 * Download this lab's [main_aws.tf](https://raw.githubusercontent.com/cloudshiftstrategies/css_terraform_training/master/labs/lab2_terraform/main_aws.tf)
 example file to your PC, and put it in the `./tfe_lab_YOUR_INITIALS` project directory
 
 * Use the IDE to edit the `my_name` variable in main_aws.tf and set it to your name
 
-#### 3.5 Push the code to trigger a TFE run
+#### 3.3 Push the code to trigger a TFE run
 
 ```bash
 git add .
@@ -95,12 +78,12 @@ git commit -m "first commit"
 git push
 ```
 
-#### 3.5 View the TFE plan results
+#### 3.4 View the TFE plan results
 
 Take a look at the run on https://app.terraform.io/app
 ![tfe_runs](images/tfe_run.png)
 
-#### 3.6 Apply the run
+#### 3.5 Apply the run
 
 Click Confirm & Apply to apply the run
 ![apply](images/tfe_confirm1.png)
