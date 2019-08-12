@@ -19,7 +19,7 @@
 3. Start the IDE you installed (instructions will be provided for Atom) and install the terraform plugin
 
     * Open the Atom IDE (you can close all the open windows/tabs) 
-    * Go to File > Settings > +Install
+    * Go to Edit > Preferences > +Install
     * Search for "terraform" > Install the **"language-terraform"** package
     * Search for "ide-terminal" > Install the **"platformio-ide-terminal"** package
 
