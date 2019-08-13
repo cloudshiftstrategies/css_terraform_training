@@ -15,6 +15,8 @@ Git repositories are usually managed with the `git` command line tool which can 
 [git GUI tools](https://git-scm.com/downloads/guis) if you prefer. Plus, most IDEs natively
 manage git repositories
 
+---
+
 ## What is github
 
 [GitHub](https://github.com) is a web-based hosting service for version control using Git. 
@@ -33,6 +35,8 @@ projects with sophisticated security and administrative features.
 
 Github hosts the repository that contains the document you are reading now.
 
+---
+
 ## Key git concepts
 
 Credit to https://www.intertech.com/Blog/introduction-to-git-concepts/ for much of the content in this section
@@ -49,6 +53,8 @@ Git has two repository types: local and remote.
 * The **local repository** is on your computer for only your direct use. The local repo is on your computer and has all the
    files and their commit history, enabling full diffs, history review, and committing when offline. 
 
+---
+
 #### Clone remote repositories
 
 Use the `git clone` command to create a local repo with all of the remote repo’s history.
@@ -59,6 +65,8 @@ Only use this command once to create the local repo from a remote.
 The above command creates a directory called `gitreponame` in the current working directory with all of the project files.
 
 Now you can get to work editing files
+
+---
 
 #### Commit your work to the remote repository
 
@@ -95,6 +103,8 @@ git commit -m "commit message"
 git push
 ```
 
+---
+
 #### Use "pull" to update your local repository from remote
 
 When you want to update your local repository with updated code in the remote repository you can use  th `git pull`
@@ -107,6 +117,8 @@ remote code with your local code.
 ```bash
 git pull
 ```
+
+---
 
 #### Tag your code to create a release
 
@@ -177,6 +189,8 @@ module "network-module" {
 }
 ```
 
+---
+
 #### Branches and pull requests
 
 Git repositories can have multiple branches. The main branch is usually called "master". 
@@ -245,6 +259,8 @@ In Terraform enterprise, remote repo commits to a new branch will not trigger ru
 merge your branch back with the master, the "pull request" that you'll submit to merge your code will trigger a
 [speculative plan](tfe201.md#speculative-planshttpswwwterraformiodocsenterpriserunindexhtmlspeculative-plans)
 which helps to determine if the branch should be merged
+
+---
 
 #### [Github Repos & TFE workspaces structure](https://www.terraform.io/docs/enterprise/workspaces/repo-structure.html)
 
