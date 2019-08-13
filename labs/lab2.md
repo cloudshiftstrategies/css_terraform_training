@@ -157,5 +157,14 @@ cd $HOME
 rm -rf tfe_lab_*
 ```
 
+## 6. Challenge Lab
+* Create a module to deploy an ec2 instance using the same [main_aws.tf](https://raw.githubusercontent.com/cloudshiftstrategies/css_terraform_training/master/labs/lab2_terraform/main_aws.tf) code used in the workspace above. Then modify your workspace code to use your provate module.
+* See Private Module Publishing documentation [here](https://www.terraform.io/docs/cloud/registry/publish.html)
+* See Private Module Usage documentation [here](https://www.terraform.io/docs/cloud/registry/using.html)
+* Hints
+  1. Modules (and thier repos) must be named with the prefix: "terraform-PROVIDER_NAME-". example module name is: "terraform-aws-ec2instance". For this lab, since multiple people will be publishing a private module, it is suggested that you name your module terrafom-aws-training-ec2-abc where abc are your initials
+  2. Modules must be tagged with a 3 digit version number. example: v1.0.0. See example [here](https://github.com/cloudshiftstrategies/css_terraform_training/blob/master/docs/github.md#tag-your-code-to-create-a-release)
+  3. You can use the module configuration designer to assist in configuring your workspace. See doc [here](https://www.terraform.io/docs/cloud/registry/design.html)
+
 [Back to Main page](../README.md)
 
